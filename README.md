@@ -135,4 +135,4 @@ jobs:
 
 If you have questions, feedback, bug reports, or feature suggestions, please reach out to:
 
-📧 **Support**: `SUPPORT_EMAIL_PLACEHOLDER`
+📧 **Support**: [asthanarachit@gmail.com](mailto:asthanarachit@gmail.com)
