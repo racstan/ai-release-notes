@@ -47,7 +47,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Generate AI Release Notes
-        uses: your-username/ai-release-notes@v1
+        uses: racstan/ai-release-notes@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.event.inputs.tag }}
@@ -56,7 +56,7 @@ jobs:
           llm-model: 'openrouter/free'
 ```
 
-> **Note**: In external repositories, replace `your-username/ai-release-notes@v1` with your published repository path and version tag.
+> **Note**: In external repositories, reference `racstan/ai-release-notes@v1` with the version tag.
 
 ---
 

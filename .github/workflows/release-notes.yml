@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Generate & Update Release Notes
-        uses: ./ # In external repositories, replace with: your-org/ai-release-notes@v1
+        uses: ./ # In external repositories, replace with: racstan/ai-release-notes@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.event.inputs.tag }}
