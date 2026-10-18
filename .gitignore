@@ -13,8 +13,4 @@ yarn-error.log*
 # OS metadata
 .DS_Store
 Thumbs.db
-
-# Unrelated workspaces
-lineager/
-
 # Note: dist/ is intentionally NOT ignored because compiled Action files must be checked into the repository.
