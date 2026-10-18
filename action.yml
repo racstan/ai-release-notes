@@ -1,0 +1,43 @@
+name: 'AI Release Notes'
+description: 'Automatically generates categorized AI release notes from commit history with fallback support.'
+author: 'AI Release Notes'
+
+branding:
+  icon: 'tag'
+  color: 'blue'
+
+inputs:
+  github-token:
+    description: 'GitHub token for GitHub API operations (compare commits, fetch tags, update release).'
+    required: false
+    default: '${{ github.token }}'
+  tag:
+    description: 'Target release tag name to summarize. If omitted, automatically detects from release event or latest release/tag.'
+    required: false
+    default: ''
+  llm-base-url:
+    description: 'OpenAI-compatible chat completions base URL.'
+    required: false
+    default: 'https://openrouter.ai/api/v1'
+  llm-model:
+    description: 'Model identifier for the OpenAI-compatible LLM endpoint.'
+    required: false
+    default: 'openrouter/free'
+  llm-api-key:
+    description: 'API key for the LLM service. If empty, falls back to a plain bullet list of commit messages.'
+    required: false
+    default: ''
+  dry-run:
+    description: 'When true, generates notes and prints them without modifying the GitHub Release (ideal for CI/PR testing).'
+    required: false
+    default: 'false'
+
+outputs:
+  notes:
+    description: 'The generated markdown release notes.'
+  release-updated:
+    description: 'Whether the GitHub Release body was updated (true or false).'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

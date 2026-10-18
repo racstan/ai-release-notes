@@ -1,0 +1,27 @@
+name: 'AI Release Notes'
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag name to generate release notes for (defaults to latest)'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  generate-notes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate & Update Release Notes
+        uses: ./ # In external repositories, replace with: your-org/ai-release-notes@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ github.event.inputs.tag }}
+          llm-api-key: ${{ secrets.LLM_API_KEY }}
+          llm-base-url: 'https://openrouter.ai/api/v1'
+          llm-model: 'openrouter/free'

@@ -1,0 +1,29 @@
+{
+  "name": "ai-release-notes",
+  "version": "1.0.0",
+  "description": "Automatically generates categorized release notes from commit history using an LLM or fallback bullets.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build src/index.js -o dist --source-map --license licenses.txt",
+    "test": "node --test test/*.test.js"
+  },
+  "keywords": [
+    "actions",
+    "github-action",
+    "release-notes",
+    "changelog",
+    "llm",
+    "openai",
+    "openrouter",
+    "ai"
+  ],
+  "author": "AI Release Notes",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.3"
+  }
+}
