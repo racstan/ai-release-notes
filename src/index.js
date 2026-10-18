@@ -278,7 +278,7 @@ async function run() {
 
     const tagInput = core.getInput('tag')?.trim() || '';
     const llmBaseUrl = core.getInput('llm-base-url') || 'https://openrouter.ai/api/v1';
-    const llmModel = core.getInput('llm-model') || 'openrouter/free';
+    const llmModel = core.getInput('llm-model') || 'openrouter/auto';
     const llmApiKey = core.getInput('llm-api-key')?.trim() || '';
     const dryRun = core.getBooleanInput('dry-run', { required: false });
 

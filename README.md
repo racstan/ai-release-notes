@@ -53,7 +53,7 @@ jobs:
           tag: ${{ github.event.inputs.tag }}
           llm-api-key: ${{ secrets.LLM_API_KEY }}
           llm-base-url: 'https://openrouter.ai/api/v1'
-          llm-model: 'openrouter/free'
+          llm-model: 'openrouter/auto'
 ```
 
 > **Note**: In external repositories, reference `racstan/ai-release-notes@v1` with the version tag.
@@ -67,7 +67,7 @@ jobs:
 | `github-token` | GitHub token for reading commits, tags, and updating the release. | No | `${{ github.token }}` |
 | `tag` | Target release tag name to summarize. If omitted, automatically determined from the release event or latest release/tag. | No | `""` |
 | `llm-base-url` | Base URL for the OpenAI-compatible `/chat/completions` endpoint. | No | `https://openrouter.ai/api/v1` |
-| `llm-model` | Model identifier to use for summarization. | No | `openrouter/free` |
+| `llm-model` | Model identifier to use for summarization. | No | `openrouter/auto` |
 | `llm-api-key` | API key for the LLM service. Passed as a secret. If omitted, triggers the fallback bullet list. | No | `""` |
 | `dry-run` | When set to `'true'`, generates and outputs notes without modifying the GitHub Release body. | No | `'false'` |
 

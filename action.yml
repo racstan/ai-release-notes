@@ -22,7 +22,7 @@ inputs:
   llm-model:
     description: 'Model identifier for the OpenAI-compatible LLM endpoint.'
     required: false
-    default: 'openrouter/free'
+    default: 'openrouter/auto'
   llm-api-key:
     description: 'API key for the LLM service. If empty, falls back to a plain bullet list of commit messages.'
     required: false
